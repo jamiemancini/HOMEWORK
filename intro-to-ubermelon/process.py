@@ -29,5 +29,7 @@ def sales_reports(log_file):
             print(line)
 
 
-#this will run the function sales_report using the log_file as the parameter
+print("We will run the function sales_report using the log_file as the parameter")
 sales_reports(log_file)
+
+

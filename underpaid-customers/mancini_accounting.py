@@ -20,8 +20,11 @@ the_file=open("customer-orders.txt")
 
 #create a function called get_incorrect_payments
 #it takes in 1 argument 'text_file'
-def get_incorrect_payments(the_file)
+def get_incorrect_payments(the_file):
 
+    #set a counter to 0
+    #it will count the number of customers with incorrect payments
+    n=0
 
     #create a for loop
     #loop through each line
@@ -31,6 +34,7 @@ def get_incorrect_payments(the_file)
         line = line.rstrip()
         line = line.split('|')
 
+        
         #example: ['965', 'Irene Ward', '14', '1.85']
         name = line[1]  #the name of the customer
         melons = line[2] #the number of melons that the customer bought
@@ -40,8 +44,12 @@ def get_incorrect_payments(the_file)
         #each melon costs 1 dollar
 
         if float(melons) != float(paid):
-            print(f'{name} paid ${paid} for {melons} melons ')
+            n = n+1
+            print(f'{n} | {name} paid ${paid} for {melons} melons ')
+    
+    #close the file
+    the_file.close()
 
-
+get_incorrect_payments(the_file)
 
      
